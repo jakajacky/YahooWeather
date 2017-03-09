@@ -53,7 +53,7 @@
   }
   
   if ([yCondition isKindOfClass:[NSDictionary class]]) {
-    Weather *weather = [self weatherWithYahooCondition:yCondition];
+    DRWeather *weather = [self weatherWithYahooCondition:yCondition];
     [weathers addObject:weather];
   }
   
@@ -71,7 +71,7 @@
   
   [forecast enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
     NSDictionary *dict = obj;
-    Weather *weather = [[Weather alloc] init];
+    DRWeather *weather = [[DRWeather alloc] init];
     weather.cityId = _cityCode;
     
     NSInteger imageCode = [self weatherImageCodeWithYahooCode:dict[@"code"]];
@@ -128,8 +128,8 @@
   return weathers;
 }
 
-- (Weather *)weatherWithYahooCondition:(NSDictionary *)condition {
-  Weather *weather  = [[Weather alloc] init];
+- (DRWeather *)weatherWithYahooCondition:(NSDictionary *)condition {
+  DRWeather *weather  = [[DRWeather alloc] init];
   
   weather.cityId = _cityCode;
   

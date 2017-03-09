@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "Weather.h"
+#import "DRWeather.h"
 
 @interface DRWeatherManager : NSObject
 @property (nonatomic) NSString *cityCode;
